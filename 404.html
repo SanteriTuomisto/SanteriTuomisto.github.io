@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>Not found</title>
+    <link rel="icon" href="/favicon.ico">
+    <script>
+      // Pages paths are case-sensitive; send e.g. /myos/ or /Synth/ to the right app
+      var apps = ['myOS', 'synth', '3d-machine-viewer'];
+      var parts = location.pathname.split('/');
+      var app = apps.find(function (name) { return name.toLowerCase() === (parts[1] || '').toLowerCase(); });
+      if (app && app !== parts[1]) {
+        parts[1] = app;
+        location.replace(parts.join('/') + location.search + location.hash);
+      }
+    </script>
+  </head>
+  <body style="margin: 0; background-color: black; color: white; font-family: sans-serif;">
+    <p style="padding: 16px;">404, nothing here. Go to <a href="/myOS/" style="color: #8080ff;">myOS</a>.</p>
+  </body>
+</html>
